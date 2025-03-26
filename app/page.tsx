@@ -40,8 +40,8 @@ export default function Home() {
     const color1 = hexToRgb(colors[index])
     const color2 = hexToRgb(colors[nextIndex])
 
-    // Smooth easing function for better transition
-    const easeProgress = easeInOutCubic(colorProgress)
+    // Smoother easing function for better transition
+    const easeProgress = easeInOutSine(colorProgress)
 
     const r = Math.round(color1.r + (color2.r - color1.r) * easeProgress)
     const g = Math.round(color1.g + (color2.g - color1.g) * easeProgress)
@@ -55,77 +55,77 @@ export default function Home() {
   // Hero parallax products
   const products = [
     {
-      title: "Luxury Property",
+      title: "FANG.COM.AU",
       link: "#",
       thumbnail: "https://i.imgur.com/DJdqg0s.png",
     },
     {
-      title: "Modern Apartment",
+      title: "FANG.COM.AU",
       link: "#",
       thumbnail: "https://i.imgur.com/ufzAknJ.png",
     },
     {
-      title: "Beachfront Villa",
+      title: "FANG.COM.AU",
       link: "#",
       thumbnail: "https://i.imgur.com/t7y2Ipw.png",
     },
     {
-      title: "Mountain Retreat",
+      title: "FANG.COM.AU",
       link: "#",
       thumbnail: "https://i.imgur.com/b7J5fWp.png",
     },
     {
-      title: "City Penthouse",
+      title: "FANG.COM.AU",
       link: "#",
       thumbnail: "https://i.imgur.com/PRWfd2c.png",
     },
     {
-      title: "Country Estate",
+      title: "FANG.COM.AU",
       link: "#",
       thumbnail: "https://i.imgur.com/9GZ82ov.png",
     },
     {
-      title: "Urban Loft",
+      title: "FANG.COM.AU",
       link: "#",
       thumbnail: "https://i.imgur.com/qHYfPAG.png",
     },
     {
-      title: "Garden Home",
+      title: "FANG.COM.AU",
       link: "#",
       thumbnail: "https://i.imgur.com/QhkKrh0.png",
     },
     {
-      title: "Riverside Property",
+      title: "FANG.COM.AU",
       link: "#",
       thumbnail: "https://i.imgur.com/rQdJMSk.png",
     },
     {
-      title: "Historic Mansion",
+      title: "FANG.COM.AU",
       link: "#",
       thumbnail: "https://i.imgur.com/eBpNLxx.png",
     },
     {
-      title: "Modern Villa",
+      title: "FANG.COM.AU",
       link: "#",
       thumbnail: "https://i.imgur.com/7ZzRbIe.png",
     },
     {
-      title: "Luxury Apartment",
+      title: "FANG.COM.AU",
       link: "#",
       thumbnail: "https://i.imgur.com/DJdqg0s.png",
     },
     {
-      title: "Beach House",
+      title: "FANG.COM.AU",
       link: "#",
       thumbnail: "https://i.imgur.com/ufzAknJ.png",
     },
     {
-      title: "Mountain Lodge",
+      title: "FANG.COM.AU",
       link: "#",
       thumbnail: "https://i.imgur.com/t7y2Ipw.png",
     },
     {
-      title: "City Apartment",
+      title: "FANG.COM.AU",
       link: "#",
       thumbnail: "https://i.imgur.com/b7J5fWp.png",
     },
@@ -204,8 +204,8 @@ export default function Home() {
         <HeroParallax products={products} />
       </section>
 
-      {/* Text Reveal Card */}
-      <section className="py-20 flex justify-center items-center">
+      {/* Combined Advertise With Us and CTA Section */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Advertise With Us</h2>
@@ -213,7 +213,7 @@ export default function Home() {
               Reach 1.4 million active potential Chinese property seekers with Australia's largest Chinese real estate platform
             </p>
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center mb-16">
             <TextRevealCard
               text="You Know The Business"
               revealText="We Know The People"
@@ -226,31 +226,27 @@ export default function Home() {
               </TextRevealCardDescription>
             </TextRevealCard>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-white/10 backdrop-blur-md">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-4xl font-bold mb-6">Ready to boost your property visibility?</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Join thousands of successful agents and property managers who trust FANG.COM.AU
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button className="bg-[#A8B5E0] hover:bg-[#B4CBF0] text-white px-8 py-6 text-lg">
-                Get Started Now
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                variant="outline"
-                className="border-[#A8B5E0] text-[#A8B5E0] hover:bg-[#A8B5E0] hover:text-white px-8 py-6 text-lg"
-              >
-                View Pricing
-              </Button>
-            </motion.div>
+          <div className="text-center">
+            <h3 className="text-2xl md:text-3xl font-bold mb-6">Ready to boost your property visibility?</h3>
+            <p className="text-lg mb-8 max-w-2xl mx-auto">
+              Join thousands of successful agents and property managers who trust FANG.COM.AU
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button className="bg-[#A8B5E0] hover:bg-[#B4CBF0] text-white px-8 py-6 text-lg">
+                  Get Started Now
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button
+                  variant="outline"
+                  className="border-[#A8B5E0] text-[#A8B5E0] hover:bg-[#A8B5E0] hover:text-white px-8 py-6 text-lg"
+                >
+                  View Pricing
+                </Button>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -293,8 +289,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing Section - Moved above Features Section */}
-      <section className="py-20 bg-white/10 backdrop-blur-md">
+      {/* Pricing Section */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Advertising Packages</h2>
@@ -451,15 +447,17 @@ export default function Home() {
               See how our intuitive dashboard helps you manage your advertising campaigns
             </p>
           </div>
-          <MacbookScroll
-            src="page.png"
-            title={
-              <span>
-                Powerful dashboard for <br /> real estate professionals
-              </span>
-            }
-            showGradient={true}
-          />
+          <div className="relative flex justify-center">
+            <MacbookScroll
+              src="page.png"
+              title={
+                <span>
+                  Powerful dashboard for <br /> real estate professionals
+                </span>
+              }
+              showGradient={true}
+            />
+          </div>
         </div>
       </section>
 
@@ -480,42 +478,42 @@ export default function Home() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
-            <div className="p-8 bg-gradient-to-r from-[#C8D9F0] to-[#D5E3F0]">
+            <div className="p-8 bg-gradient-to-r from-[#A8B5E0] to-[#B4CBF0]">
               <h3 className="text-2xl font-bold text-white mb-2">Get in Touch</h3>
-              <p className="text-white/80">
+              <p className="text-white/90">
                 Have questions about our advertising options? Fill out the form below and our team will contact you.
               </p>
             </div>
-            <div className="p-8">
+            <div className="p-8 bg-white">
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-2">
                       Name
                     </label>
-                    <Input id="name" placeholder="Your name" />
+                    <Input id="name" placeholder="Your name" className="border-gray-300 focus:border-[#A8B5E0] focus:ring-[#A8B5E0]" />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
                       Email
                     </label>
-                    <Input id="email" type="email" placeholder="Your email" />
+                    <Input id="email" type="email" placeholder="Your email" className="border-gray-300 focus:border-[#A8B5E0] focus:ring-[#A8B5E0]" />
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium mb-2">
+                  <label htmlFor="company" className="block text-sm font-medium text-gray-900 mb-2">
                     Company
                   </label>
-                  <Input id="company" placeholder="Your company" />
+                  <Input id="company" placeholder="Your company" className="border-gray-300 focus:border-[#A8B5E0] focus:ring-[#A8B5E0]" />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-900 mb-2">
                     Message
                   </label>
-                  <Textarea id="message" placeholder="How can we help you?" rows={4} />
+                  <Textarea id="message" placeholder="How can we help you?" rows={4} className="border-gray-300 focus:border-[#A8B5E0] focus:ring-[#A8B5E0]" />
                 </div>
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <Button className="w-full bg-[#D5E3F0] hover:bg-[#DAF0F7] text-white">Submit</Button>
+                  <Button className="w-full bg-[#A8B5E0] hover:bg-[#B4CBF0] text-white font-medium">Submit</Button>
                 </motion.div>
               </form>
             </div>
@@ -524,7 +522,7 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-r from-[#D5E3F0] to-[#DAF0F7]">
+      <section className="py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-black">Ready to Grow Your Business?</h2>
           <p className="text-xl mb-8 text-black/80 max-w-2xl mx-auto">
@@ -646,8 +644,8 @@ function hexToRgb(hex: string): { r: number; g: number; b: number } {
   return { r, g, b }
 }
 
-// Smooth easing function for better transitions
-function easeInOutCubic(t: number): number {
-  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
+// Smoother easing function for better transitions
+function easeInOutSine(t: number): number {
+  return -(Math.cos(Math.PI * t) - 1) / 2
 }
 

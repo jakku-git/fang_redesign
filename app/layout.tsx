@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 export const metadata: Metadata = {
-  title: "FANG.com.au - Advertise With Us",
+  title: "fang.com.au - Advertise With Us",
   description: "Reach millions of property seekers with Australia's premier real estate platform",
     generator: 'v0.dev'
 }

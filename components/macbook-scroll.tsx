@@ -51,17 +51,17 @@ export const MacbookScroll = ({
     }
   }, [])
 
-  const scaleX = useTransform(scrollYProgress, [0, 0.3], [1.2, isMobile ? 1 : 1.5])
-  const scaleY = useTransform(scrollYProgress, [0, 0.3], [0.6, isMobile ? 1 : 1.5])
-  const translate = useTransform(scrollYProgress, [0, 1], [0, 1500])
-  const rotate = useTransform(scrollYProgress, [0.1, 0.12, 0.3], [-28, -28, 0])
-  const textTransform = useTransform(scrollYProgress, [0, 0.3], [0, 100])
-  const textOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0])
+  const scaleX = useTransform(scrollYProgress, [0, 0.2, 0.8], [1.2, isMobile ? 1 : 1.5, isMobile ? 1 : 1.5])
+  const scaleY = useTransform(scrollYProgress, [0, 0.2, 0.8], [0.6, isMobile ? 1 : 1.5, isMobile ? 1 : 1.5])
+  const translate = useTransform(scrollYProgress, [0, 0.2, 0.8], [0, 500, 500])
+  const rotate = useTransform(scrollYProgress, [0.1, 0.15, 0.2, 0.8], [-28, -28, 0, 0])
+  const textTransform = useTransform(scrollYProgress, [0, 0.2], [0, 100])
+  const textOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0])
 
   return (
     <div
       ref={ref}
-      className="flex min-h-[200vh] shrink-0 scale-[0.35] transform flex-col items-center justify-start py-0 [perspective:800px] sm:scale-50 md:scale-100 md:py-80"
+      className="flex min-h-[120vh] shrink-0 scale-[0.35] transform flex-col items-center justify-start py-0 [perspective:800px] sm:scale-50 md:scale-100 md:py-40"
     >
       <motion.h2
         style={{
@@ -147,7 +147,7 @@ export const Lid = ({
           rotateX: rotate,
           translateY: translate,
           transformStyle: "preserve-3d",
-          transformOrigin: "top",
+          transformOrigin: "center center",
         }}
         className="absolute inset-0 h-96 w-[32rem] rounded-2xl bg-[#010101] p-2"
       >
@@ -156,7 +156,7 @@ export const Lid = ({
           src={(src as string) || "page.png"}
           alt="dashboard preview"
           fill
-          className="absolute inset-0 h-full w-full rounded-lg object-cover object-left-top"
+          className="absolute inset-0 h-full w-full rounded-lg object-cover object-center"
         />
       </motion.div>
     </div>
