@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { CheckCircle2, ArrowRight, Building2, Users, BarChart3, Globe, Newspaper } from "lucide-react"
+import Image from "next/image"
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0)
@@ -191,7 +192,14 @@ export default function Home() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center">
-            <h1 className="text-xl font-bold">FANG.com.au</h1>
+            <Image
+              src="/logo.png"
+              alt="FANG.com.au"
+              width={350}
+              height={150}
+              className="h-8 w-auto"
+              priority
+            />
           </div>
           <div>
             <Button className="bg-[#A8B5E0] hover:bg-[#B4CBF0] text-white">Sign In</Button>

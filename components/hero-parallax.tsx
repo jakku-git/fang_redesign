@@ -51,14 +51,14 @@ export const HeroParallax = ({
     springConfig
   )
 
-  // Form visibility based on scroll progress
-  const formOpacity = useTransform(scrollYProgress, [0.4, 0.5], [0, 1])
-  const formTranslateY = useTransform(scrollYProgress, [0.4, 0.5], [100, 0])
+  // Form visibility based on scroll progress - adjusted to appear later
+  const formOpacity = useTransform(scrollYProgress, [0.7, 0.8], [0, 1])
+  const formTranslateY = useTransform(scrollYProgress, [0.7, 0.8], [100, 0])
 
   return (
     <div
       ref={ref}
-      className="h-[300vh] py-40 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[320vh] py-40 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -125,13 +125,27 @@ export const HeroParallax = ({
 export const Header = () => {
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
-        Australia's Largest <br /> Chinese Real Estate Platform
-      </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-        Connect with Australia's largest audience of active Chinese property seekers. Our premium advertising solutions help you
-        showcase your properties and services to the right audience.
-      </p>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <Image
+          src="/logo.png"
+          alt="FANG.com.au"
+          width={500}
+          height={200}
+          className="w-auto h-24 md:h-32 mb-8 md:mb-12"
+          priority
+        />
+        <h1 className="text-2xl md:text-8xl font-bold text-white tracking-tight leading-tight drop-shadow-2xl [text-shadow:_2px_2px_10px_rgb(0_0_0_/_40%)]">
+          Australia's Largest <br /> Chinese Real Estate Marketplace Platform
+        </h1>
+        <p className="max-w-2xl text-lg md:text-2xl mt-8 text-white font-medium drop-shadow-lg [text-shadow:_2px_2px_10px_rgb(0_0_0_/_40%)]">
+          Connect with Australia's largest audience of active Chinese property seekers. Our premium advertising solutions help you
+          showcase your properties and services to the right audience.
+        </p>
+      </motion.div>
     </div>
   )
 }
