@@ -36,7 +36,7 @@ export function FeaturesSectionDemo() {
     {
       title: "Diversity is our strength",
       description:
-        "Our platform bridges Australia’s local expertise with a vibrant Chinese market, sparking innovation and unlocking new growth opportunities for agents.",
+        "Our platform bridges Australia's local expertise with a vibrant Chinese market, sparking innovation and unlocking new growth opportunities for agents.",
       skeleton: <SkeletonFour />,
       className: "col-span-1 lg:col-span-3 border-b lg:border-none",
     },
@@ -146,75 +146,97 @@ export const SkeletonThree = () => {
 }
 
 export const SkeletonTwo = () => {
-  const images = [
-    "https://images.unsplash.com/photo-1517322048670-4fba75cbbb62?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1573790387438-4da905039392?q=80&w=3425&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1555400038-63f5ba517a47?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1554931670-4ebfabf6e7a9?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=2581&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  const platformStats = [
+    {
+      logo: "/fanglogo.png",
+      stats: [
+        { label: "Monthly Active Users", value: "1.4M+", change: "+12%" },
+        { label: "Daily Page Views", value: "500K+", change: "+8%" },
+        { label: "Avg. Session Duration", value: "8.5min", change: "+15%" },
+        { label: "Engagement Rate", value: "32%", change: "+5%" }
+      ]
+    },
+    {
+      logo: "/todaylogo.png",
+      stats: [
+        { label: "Daily Readers", value: "800K+", change: "+10%" },
+        { label: "Article Shares", value: "50K+", change: "+15%" },
+        { label: "Content Reach", value: "2.1M+", change: "+20%" },
+        { label: "User Growth", value: "25%", change: "+7%" }
+      ]
+    },
+    {
+      logo: "/wechatlogo.png",
+      stats: [
+        { label: "Followers", value: "600K+", change: "+18%" },
+        { label: "Post Views", value: "300K+", change: "+12%" },
+        { label: "Interaction Rate", value: "28%", change: "+9%" },
+        { label: "Message Response", value: "95%", change: "+5%" }
+      ]
+    }
   ]
 
-  const imageVariants = {
-    whileHover: {
-      scale: 1.1,
-      rotate: 0,
-      zIndex: 100,
-    },
-    whileTap: {
-      scale: 1.1,
-      rotate: 0,
-      zIndex: 100,
-    },
-  }
   return (
-    <div className="relative flex flex-col items-start p-8 gap-10 h-full overflow-hidden">
-      <div className="flex flex-row -ml-20">
-        {images.map((image, idx) => (
-          <motion.div
-            variants={imageVariants}
-            key={"images-first" + idx}
-            style={{
-              rotate: Math.random() * 20 - 10,
-            }}
-            whileHover="whileHover"
-            whileTap="whileTap"
-            className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 shrink-0 overflow-hidden"
-          >
-            <Image
-              src={image}
-              alt="bali images"
-              width="500"
-              height="500"
-              className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover shrink-0"
-            />
-          </motion.div>
-        ))}
-      </div>
-      <div className="flex flex-row">
-        {images.map((image, idx) => (
-          <motion.div
-            key={"images-second" + idx}
-            style={{
-              rotate: Math.random() * 20 - 10,
-            }}
-            variants={imageVariants}
-            whileHover="whileHover"
-            whileTap="whileTap"
-            className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 shrink-0 overflow-hidden"
-          >
-            <Image
-              src={image}
-              alt="bali images"
-              width="500"
-              height="500"
-              className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover shrink-0"
-            />
-          </motion.div>
-        ))}
-      </div>
-
-      <div className="absolute left-0 z-[100] inset-y-0 w-20 bg-gradient-to-r from-white dark:from-black to-transparent  h-full pointer-events-none" />
-      <div className="absolute right-0 z-[100] inset-y-0 w-20 bg-gradient-to-l from-white dark:from-black  to-transparent h-full pointer-events-none" />
+    <div className="relative flex flex-col p-4 h-full">
+      {platformStats.map((platform, platformIdx) => (
+        <div key={platform.logo} className="mb-8 last:mb-4">
+          <div className="flex justify-center mb-4">
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: platformIdx * 0.2 }}
+            >
+              <Image
+                src={platform.logo}
+                alt="Platform Logo"
+                width={200}
+                height={60}
+                className="h-12 w-auto object-contain"
+              />
+            </motion.div>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            {platform.stats.map((stat, idx) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                whileHover={{ 
+                  scale: 1.03,
+                  backgroundColor: "rgba(255, 255, 255, 0.15)",
+                  transition: { duration: 0.2 }
+                }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ delay: (platformIdx * 4 + idx) * 0.05 }}
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 flex flex-col justify-between cursor-pointer group relative min-h-[11rem]"
+              >
+                <motion.span 
+                  className="text-base text-neutral-500 dark:text-neutral-400 group-hover:text-neutral-800 dark:group-hover:text-neutral-200 transition-colors font-medium"
+                >
+                  {stat.label}
+                </motion.span>
+                <div className="flex items-baseline gap-2 mt-3">
+                  <motion.span 
+                    className="text-2xl font-bold text-black dark:text-white"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
+                    {stat.value}
+                  </motion.span>
+                  <motion.span 
+                    initial={{ opacity: 0.8 }}
+                    whileHover={{ opacity: 1, y: -2 }}
+                    className="text-sm text-emerald-500 font-medium"
+                  >
+                    {stat.change}
+                  </motion.span>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-white/5 group-hover:opacity-100 opacity-0 transition-opacity rounded-xl" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   )
 }

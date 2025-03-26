@@ -307,42 +307,42 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-12 max-w-[90rem] mx-auto">
             {/* Basic Package */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-xl overflow-hidden transition-transform hover:scale-105"
+              className="bg-white/95 rounded-2xl shadow-2xl overflow-hidden transition-transform hover:scale-105 backdrop-blur-sm border-2 border-grey"
             >
-              <div className="p-8 bg-gradient-to-r from-[#A8B5E0] to-[#B4CBF0]">
-                <h3 className="text-xl font-bold text-white mb-2">Basic</h3>
-                <div className="text-3xl font-bold text-white">
-                  $450<span className="text-sm font-normal">/listing</span>
+              <div className="p-12 bg-gradient-to-br from-[#A8B5E0] to-[#B4CBF0]">
+                <h3 className="text-3xl font-bold text-white mb-4 drop-shadow-lg">Essential</h3>
+                <div className="text-5xl font-bold text-white drop-shadow-lg">
+                  $450<span className="text-xl font-normal">/listing</span>
                 </div>
               </div>
-              <div className="p-8">
-                <ul className="space-y-4">
-                  <li className="flex items-center">
-                    <CheckCircle2 className="h-5 w-5 text-[#A8B5E0] mr-2" />
-                    <span>2,500 impressions</span>
+              <div className="p-12">
+                <ul className="space-y-8">
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-6 w-6 text-[#A8B5E0] mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-xl text-gray-800">2,500 impressions</span>
                   </li>
-                  <li className="flex items-center">
-                    <CheckCircle2 className="h-5 w-5 text-[#A8B5E0] mr-2" />
-                    <span>Premium Property Listing</span>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-6 w-6 text-[#A8B5E0] mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-xl text-gray-800">Premium Property Listing</span>
                   </li>
-                  <li className="flex items-center">
-                    <CheckCircle2 className="h-5 w-5 text-[#A8B5E0] mr-2" />
-                    <span>Weekly Performance Report</span>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-6 w-6 text-[#A8B5E0] mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-xl text-gray-800">Weekly Performance Report</span>
                   </li>
-                  <li className="flex items-center">
-                    <CheckCircle2 className="h-5 w-5 text-[#A8B5E0] mr-2" />
-                    <span>Comprehensive Analytics</span>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-6 w-6 text-[#A8B5E0] mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-xl text-gray-800">Comprehensive Analytics</span>
                   </li>
                 </ul>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button className="w-full mt-8 bg-[#A8B5E0] hover:bg-[#B4CBF0] text-white">Select Plan</Button>
+                  <Button className="w-full mt-12 bg-gradient-to-r from-[#A8B5E0] via-[#B794F4] to-[#B4CBF0] hover:from-[#B4CBF0] hover:via-[#C4B5FD] hover:to-[#C1D5F0] text-white text-xl py-8 shadow-lg">Select Plan</Button>
                 </motion.div>
               </div>
             </motion.div>
@@ -353,42 +353,42 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-xl overflow-hidden transform scale-105 z-10 border-2 border-[#C1D5F0]"
+              className="bg-white/95 rounded-2xl shadow-2xl overflow-hidden transform scale-105 z-10 border-4 border-grey backdrop-blur-sm"
             >
-              <div className="p-8 bg-gradient-to-r from-[#B4CBF0] to-[#C1D5F0]">
-                <div className="bg-white text-[#B4CBF0] text-xs font-bold uppercase py-1 px-2 rounded-full inline-block mb-2">
+              <div className="p-12 bg-gradient-to-br from-[#B4CBF0] to-[#C1D5F0]">
+                <div className="bg-white/95 text-[#B4CBF0] text-lg font-bold uppercase py-2 px-4 rounded-full inline-block mb-4 backdrop-blur-sm">
                   Most Popular
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">Premium</h3>
-                <div className="text-3xl font-bold text-white">
-                  $750<span className="text-sm font-normal">/month</span>
+                <h3 className="text-3xl font-bold text-white mb-4 drop-shadow-lg">Premium</h3>
+                <div className="text-5xl font-bold text-white drop-shadow-lg">
+                  $750<span className="text-xl font-normal">/month</span>
                 </div>
               </div>
-              <div className="p-8">
-                <ul className="space-y-4">
-                  <li className="flex items-center">
-                    <CheckCircle2 className="h-5 w-5 text-[#B4CBF0] mr-2" />
-                    <span>7,000 impressions</span>
+              <div className="p-12">
+                <ul className="space-y-8">
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-6 w-6 text-[#B4CBF0] mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-xl text-gray-800">7,000 impressions</span>
                   </li>
-                  <li className="flex items-center">
-                    <CheckCircle2 className="h-5 w-5 text-[#B4CBF0] mr-2" />
-                    <span>Featured Placement</span>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-6 w-6 text-[#B4CBF0] mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-xl text-gray-800">Featured Placement</span>
                   </li>
-                  <li className="flex items-center">
-                    <CheckCircle2 className="h-5 w-5 text-[#B4CBF0] mr-2" />
-                    <span>SydneyToday Feature Listing</span>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-6 w-6 text-[#B4CBF0] mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-xl text-gray-800">SydneyToday Feature Listing</span>
                   </li>
-                  <li className="flex items-center">
-                    <CheckCircle2 className="h-5 w-5 text-[#B4CBF0] mr-2" />
-                    <span>Mobile Push Notification</span>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-6 w-6 text-[#B4CBF0] mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-xl text-gray-800">Mobile Push Notification</span>
                   </li>
-                  <li className="flex items-center">
-                    <CheckCircle2 className="h-5 w-5 text-[#B4CBF0] mr-2" />
-                    <span>Social Media Promotion (WeChat, RED, etc.)</span>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-6 w-6 text-[#B4CBF0] mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-xl text-gray-800">Social Media Promotion (WeChat, RED, etc.)</span>
                   </li>
                 </ul>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button className="w-full mt-8 bg-[#B4CBF0] hover:bg-[#C1D5F0] text-white">Select Plan</Button>
+                  <Button className="w-full mt-12 bg-gradient-to-r from-[#B4CBF0] via-[#9F7AEA] to-[#C1D5F0] hover:from-[#C1D5F0] hover:via-[#B794F4] hover:to-[#C8D9F0] text-white text-xl py-8 shadow-lg">Select Plan</Button>
                 </motion.div>
               </div>
             </motion.div>
@@ -399,39 +399,39 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-xl overflow-hidden transition-transform hover:scale-105"
+              className="bg-white/95 rounded-2xl shadow-2xl overflow-hidden transition-transform hover:scale-105 backdrop-blur-sm border-2 border-grey"
             >
-              <div className="p-8 bg-gradient-to-r from-[#C1D5F0] to-[#C8D9F0]">
-                <h3 className="text-xl font-bold text-white mb-2">Enterprise</h3>
-                <div className="text-3xl font-bold text-white">
-                  $999<span className="text-sm font-normal">/month</span>
+              <div className="p-12 bg-gradient-to-br from-[#A8B5E0] to-[#B4CBF0]">
+                <h3 className="text-3xl font-bold text-white mb-4 drop-shadow-lg">Premium Plus</h3>
+                <div className="text-5xl font-bold text-white drop-shadow-lg">
+                  $1,250<span className="text-xl font-normal">/listing</span>
                 </div>
               </div>
-              <div className="p-8">
-                <ul className="space-y-4">
-                  <li className="flex items-center">
-                    <CheckCircle2 className="h-5 w-5 text-[#C1D5F0] mr-2" />
-                    <span>Unlimited Listings</span>
+              <div className="p-12">
+                <ul className="space-y-8">
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-6 w-6 text-[#C1D5F0] mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-xl text-gray-800">15,000 impressions</span>
                   </li>
-                  <li className="flex items-center">
-                    <CheckCircle2 className="h-5 w-5 text-[#C1D5F0] mr-2" />
-                    <span>Top Search Results</span>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-6 w-6 text-[#C1D5F0] mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-xl text-gray-800">Headline Listing</span>
                   </li>
-                  <li className="flex items-center">
-                    <CheckCircle2 className="h-5 w-5 text-[#C1D5F0] mr-2" />
-                    <span>Premium Analytics Dashboard</span>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-6 w-6 text-[#C1D5F0] mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-xl text-gray-800">Premium Social Media Boost</span>
                   </li>
-                  <li className="flex items-center">
-                    <CheckCircle2 className="h-5 w-5 text-[#C1D5F0] mr-2" />
-                    <span>Dedicated Account Manager</span>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-6 w-6 text-[#C1D5F0] mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-xl text-gray-800">Premium SydneyToday Feature Listing</span>
                   </li>
-                  <li className="flex items-center">
-                    <CheckCircle2 className="h-5 w-5 text-[#C1D5F0] mr-2" />
-                    <span>Custom Branding Options</span>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="h-6 w-6 text-[#C1D5F0] mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-xl text-gray-800">Premium Mobile Push Notification</span>
                   </li>
                 </ul>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button className="w-full mt-8 bg-[#C1D5F0] hover:bg-[#C8D9F0] text-white">Select Plan</Button>
+                  <Button className="w-full mt-12 bg-gradient-to-r from-[#A8B5E0] via-[#B794F4] to-[#B4CBF0] hover:from-[#B4CBF0] hover:via-[#C4B5FD] hover:to-[#C1D5F0] text-white text-xl py-8 shadow-lg">Select Plan</Button>
                 </motion.div>
               </div>
             </motion.div>
@@ -460,7 +460,7 @@ export default function Home() {
               src="page.png"
               title={
                 <span>
-                  Powerful dashboard for <br /> real estate professionals
+                  POWERFUL TOOL FOR <br /> REAL ESTATE PROFESSIONALS
                 </span>
               }
               showGradient={true}
