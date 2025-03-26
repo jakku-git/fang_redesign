@@ -31,18 +31,21 @@ export default function Home() {
   const scrollProgress = scrollY / scrollHeight
 
   // Interpolate between colors based on scroll position
-  const getColorForProgress = (progress) => {
+  const getColorForProgress = (progress: number): string => {
     const numColors = colors.length
-    const index = Math.min(Math.floor(progress * numColors), numColors - 1)
+    const index = Math.min(Math.floor(progress * (numColors - 1)), numColors - 1)
     const nextIndex = Math.min(index + 1, numColors - 1)
-    const colorProgress = (progress * numColors) % 1
+    const colorProgress = (progress * (numColors - 1)) % 1
 
     const color1 = hexToRgb(colors[index])
     const color2 = hexToRgb(colors[nextIndex])
 
-    const r = Math.round(color1.r + (color2.r - color1.r) * colorProgress)
-    const g = Math.round(color1.g + (color2.g - color1.g) * colorProgress)
-    const b = Math.round(color1.b + (color2.b - color1.b) * colorProgress)
+    // Smooth easing function for better transition
+    const easeProgress = easeInOutCubic(colorProgress)
+
+    const r = Math.round(color1.r + (color2.r - color1.r) * easeProgress)
+    const g = Math.round(color1.g + (color2.g - color1.g) * easeProgress)
+    const b = Math.round(color1.b + (color2.b - color1.b) * easeProgress)
 
     return `rgb(${r}, ${g}, ${b})`
   }
@@ -52,79 +55,79 @@ export default function Home() {
   // Hero parallax products
   const products = [
     {
-      title: "Real Estate Listings",
+      title: "Luxury Property",
       link: "#",
-      thumbnail: "/placeholder.svg?height=600&width=600",
+      thumbnail: "https://i.imgur.com/DJdqg0s.png",
     },
     {
-      title: "Premium Placement",
+      title: "Modern Apartment",
       link: "#",
-      thumbnail: "/placeholder.svg?height=600&width=600",
+      thumbnail: "https://i.imgur.com/ufzAknJ.png",
     },
     {
-      title: "Featured Properties",
+      title: "Beachfront Villa",
       link: "#",
-      thumbnail: "/placeholder.svg?height=600&width=600",
+      thumbnail: "https://i.imgur.com/t7y2Ipw.png",
     },
     {
-      title: "Agent Profiles",
+      title: "Mountain Retreat",
       link: "#",
-      thumbnail: "/placeholder.svg?height=600&width=600",
+      thumbnail: "https://i.imgur.com/b7J5fWp.png",
     },
     {
-      title: "Banner Advertising",
+      title: "City Penthouse",
       link: "#",
-      thumbnail: "/placeholder.svg?height=600&width=600",
+      thumbnail: "https://i.imgur.com/PRWfd2c.png",
     },
     {
-      title: "Email Marketing",
+      title: "Country Estate",
       link: "#",
-      thumbnail: "/placeholder.svg?height=600&width=600",
+      thumbnail: "https://i.imgur.com/9GZ82ov.png",
     },
     {
-      title: "Social Media Promotion",
+      title: "Urban Loft",
       link: "#",
-      thumbnail: "/placeholder.svg?height=600&width=600",
+      thumbnail: "https://i.imgur.com/qHYfPAG.png",
     },
     {
-      title: "Video Showcases",
+      title: "Garden Home",
       link: "#",
-      thumbnail: "/placeholder.svg?height=600&width=600",
+      thumbnail: "https://i.imgur.com/QhkKrh0.png",
     },
     {
-      title: "Virtual Tours",
+      title: "Riverside Property",
       link: "#",
-      thumbnail: "/placeholder.svg?height=600&width=600",
+      thumbnail: "https://i.imgur.com/rQdJMSk.png",
     },
     {
-      title: "Market Reports",
+      title: "Historic Mansion",
       link: "#",
-      thumbnail: "/placeholder.svg?height=600&width=600",
+      thumbnail: "https://i.imgur.com/eBpNLxx.png",
     },
     {
-      title: "Sponsored Content",
+      title: "Modern Villa",
       link: "#",
-      thumbnail: "/placeholder.svg?height=600&width=600",
+      thumbnail: "https://i.imgur.com/7ZzRbIe.png",
     },
     {
-      title: "Mobile App Features",
+      title: "Luxury Apartment",
       link: "#",
-      thumbnail: "/placeholder.svg?height=600&width=600",
+      thumbnail: "https://i.imgur.com/DJdqg0s.png",
     },
     {
-      title: "Print Advertising",
+      title: "Beach House",
       link: "#",
-      thumbnail: "/placeholder.svg?height=600&width=600",
+      thumbnail: "https://i.imgur.com/ufzAknJ.png",
     },
     {
-      title: "Lead Generation",
+      title: "Mountain Lodge",
       link: "#",
-      thumbnail: "/placeholder.svg?height=600&width=600",
+      thumbnail: "https://i.imgur.com/t7y2Ipw.png",
     },
     {
-      title: "Analytics Dashboard",
+      title: "City Apartment",
       link: "#",
-      thumbnail: "/placeholder.svg?height=600&width=600",
+      thumbnail: "https://i.imgur.com/b7J5fWp.png",
     },
   ]
 
@@ -207,18 +210,18 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Advertise With Us</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Reach millions of potential buyers and renters with Australia's premier real estate platform
+              Reach 1.4 million active potential Chinese property seekers with Australia's largest Chinese real estate platform
             </p>
           </div>
           <div className="flex justify-center">
             <TextRevealCard
-              text="Maximize Your Real Estate Exposure"
-              revealText="Connect with Serious Property Seekers"
+              text="You Know The Business"
+              revealText="We Know The People"
               className="w-full max-w-4xl"
             >
               <TextRevealCardTitle>Why advertise with FANG.com.au?</TextRevealCardTitle>
               <TextRevealCardDescription>
-                With over 12 million monthly visitors and the most comprehensive property database in Australia, we
+                With an audience size of over 1.4 million Chinese users in Australia, we
                 connect you with serious buyers and renters actively looking for their next property.
               </TextRevealCardDescription>
             </TextRevealCard>
@@ -231,7 +234,7 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-4xl font-bold mb-6">Ready to boost your property visibility?</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Join thousands of successful agents and property managers who trust FANG.com.au
+            Join thousands of successful agents and property managers who trust FANG.COM.AU
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -263,28 +266,28 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap justify-center gap-8">
             <ThreeDCardDemo
-              title="Premium Listings"
-              description="Showcase your properties with high-quality images and detailed descriptions"
+              title="Diverse Social Media Channels"
+              description="Get your listing on our official social platforms such as WeChat, RED, and more"
               ctaText="Learn More"
-              imageSrc="/placeholder.svg?height=1000&width=1000"
+              imageSrc="func1.webp"
             />
             <ThreeDCardDemo
-              title="Featured Agents"
-              description="Highlight your agency profile and build your personal brand"
+              title="Comprehensize Search Results"
+              description="Our Chinese users can get comprehensive data such as buyer reports, regional analyses, auction results, and more"
               ctaText="Get Featured"
-              imageSrc="/placeholder.svg?height=1000&width=1000"
+              imageSrc="func2.webp"
             />
             <ThreeDCardDemo
-              title="Banner Advertising"
-              description="Increase visibility with strategic banner placements across our platform"
+              title="School Rankings"
+              description="Features that matter to our audience. We present accurate school rankings in each listings."
               ctaText="See Options"
-              imageSrc="/placeholder.svg?height=1000&width=1000"
+              imageSrc="func3.webp"
             />
             <ThreeDCardDemo
-              title="Email Marketing"
-              description="Reach potential clients directly in their inbox with targeted campaigns"
+              title="Comprehensive Analytics"
+              description="Detailed information for each properties that our audience cares about. Such as geographic location, planning information, potential risks and more."
               ctaText="Start Now"
-              imageSrc="/placeholder.svg?height=1000&width=1000"
+              imageSrc="func4.webp"
             />
           </div>
         </div>
@@ -312,26 +315,26 @@ export default function Home() {
               <div className="p-8 bg-gradient-to-r from-[#A8B5E0] to-[#B4CBF0]">
                 <h3 className="text-xl font-bold text-white mb-2">Basic</h3>
                 <div className="text-3xl font-bold text-white">
-                  $199<span className="text-sm font-normal">/month</span>
+                  $450<span className="text-sm font-normal">/listing</span>
                 </div>
               </div>
               <div className="p-8">
                 <ul className="space-y-4">
                   <li className="flex items-center">
                     <CheckCircle2 className="h-5 w-5 text-[#A8B5E0] mr-2" />
-                    <span>10 Standard Listings</span>
+                    <span>2,500 impressions</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle2 className="h-5 w-5 text-[#A8B5E0] mr-2" />
-                    <span>Basic Analytics</span>
+                    <span>Premium Property Listing</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle2 className="h-5 w-5 text-[#A8B5E0] mr-2" />
-                    <span>Email Support</span>
+                    <span>Weekly Performance Report</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle2 className="h-5 w-5 text-[#A8B5E0] mr-2" />
-                    <span>Mobile Optimization</span>
+                    <span>Comprehensive Analytics</span>
                   </li>
                 </ul>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -354,14 +357,14 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">Premium</h3>
                 <div className="text-3xl font-bold text-white">
-                  $499<span className="text-sm font-normal">/month</span>
+                  $750<span className="text-sm font-normal">/month</span>
                 </div>
               </div>
               <div className="p-8">
                 <ul className="space-y-4">
                   <li className="flex items-center">
                     <CheckCircle2 className="h-5 w-5 text-[#B4CBF0] mr-2" />
-                    <span>25 Premium Listings</span>
+                    <span>7,000 impressions</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle2 className="h-5 w-5 text-[#B4CBF0] mr-2" />
@@ -369,15 +372,15 @@ export default function Home() {
                   </li>
                   <li className="flex items-center">
                     <CheckCircle2 className="h-5 w-5 text-[#B4CBF0] mr-2" />
-                    <span>Advanced Analytics</span>
+                    <span>SydneyToday Feature Listing</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle2 className="h-5 w-5 text-[#B4CBF0] mr-2" />
-                    <span>Priority Support</span>
+                    <span>Mobile Push Notification</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle2 className="h-5 w-5 text-[#B4CBF0] mr-2" />
-                    <span>Social Media Promotion</span>
+                    <span>Social Media Promotion (WeChat, RED, etc.)</span>
                   </li>
                 </ul>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -449,7 +452,7 @@ export default function Home() {
             </p>
           </div>
           <MacbookScroll
-            src="/placeholder.svg?height=1000&width=1000"
+            src="page.png"
             title={
               <span>
                 Powerful dashboard for <br /> real estate professionals
@@ -523,12 +526,12 @@ export default function Home() {
       {/* Final CTA */}
       <section className="py-20 bg-gradient-to-r from-[#D5E3F0] to-[#DAF0F7]">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Ready to Grow Your Business?</h2>
-          <p className="text-xl mb-8 text-white/80 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-black">Ready to Grow Your Business?</h2>
+          <p className="text-xl mb-8 text-black/80 max-w-2xl mx-auto">
             Join thousands of successful real estate professionals advertising on FANG.com.au
           </p>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button className="bg-white text-[#D5E3F0] hover:bg-gray-100 px-8 py-6 text-lg">
+            <Button className="bg-white text-black hover:bg-gray-100 px-8 py-6 text-lg">
               Start Advertising Today
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -631,7 +634,7 @@ export default function Home() {
 }
 
 // Helper function to convert hex to RGB
-function hexToRgb(hex) {
+function hexToRgb(hex: string): { r: number; g: number; b: number } {
   // Remove the hash if it exists
   hex = hex.replace("#", "")
 
@@ -641,5 +644,10 @@ function hexToRgb(hex) {
   const b = Number.parseInt(hex.substring(4, 6), 16)
 
   return { r, g, b }
+}
+
+// Smooth easing function for better transitions
+function easeInOutCubic(t: number): number {
+  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
 }
 

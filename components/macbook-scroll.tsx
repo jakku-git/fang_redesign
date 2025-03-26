@@ -153,7 +153,7 @@ export const Lid = ({
       >
         <div className="absolute inset-0 rounded-lg bg-[#272729]" />
         <Image
-          src={(src as string) || "/placeholder.svg"}
+          src={(src as string) || "page.png"}
           alt="dashboard preview"
           fill
           className="absolute inset-0 h-full w-full rounded-lg object-cover object-left-top"
