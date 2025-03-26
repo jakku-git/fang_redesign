@@ -11,17 +11,17 @@ import Link from "next/link"
 export function FeaturesSectionDemo() {
   const features = [
     {
-      title: "Track issues effectively",
+      title: "Reach A New Audience",
       description:
-        "Track and manage your project issues with ease using our intuitive interface.",
+        "Connect with active Chinese property seekers who are ready to make decisions. Our platform attracts serious buyers and renters.",
       skeleton: <SkeletonOne />,
       className:
         "col-span-1 lg:col-span-4 border-b lg:border-r dark:border-neutral-800",
     },
     {
-      title: "Capture pictures with AI",
+      title: "The Largest Chinese Audience",
       description:
-        "Capture stunning photos effortlessly using our advanced AI technology.",
+        "Elevate your game by reaching the largest audience of Chinese property seekers.",
       skeleton: <SkeletonTwo />,
       className: "border-b col-span-1 lg:col-span-2 dark:border-neutral-800",
     },
